@@ -10,7 +10,7 @@
 
      注意：每个小模块抽取类，每个类中比较复杂的widget抽取方法(不要再抽取类,类太多了也不好)
 
-     三方知识：拨打电话的插件，完了试着自己定义个插件（最起码先能供Android使用）
+     三方知识：拨打电话的插件url_launcher，完了试着自己定义个插件（最起码先能供Android使用）
 
      系统知识：注意状态的保存，貌似跟以前不太一样
 
@@ -34,6 +34,8 @@
 
 
      待解决： * 触点在GridView上的时候无法上下滑动的问题
+
+             * 关于适配的问题，使用ScreenUtil适配时，注意ScreenUtil.instance.setWidth(100)和ScreenUtil.instance.setHeight(100)表现出的高度是不一样的
 
 
 

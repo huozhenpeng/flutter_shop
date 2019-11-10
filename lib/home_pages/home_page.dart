@@ -25,11 +25,14 @@ class HomePage extends StatelessWidget
 
                     List<Map> recomands=(data['data']['category'] as List).cast();
 
+                    String url=data['data']['advertesPicture']['PICTURE_ADDRESS'];
+
                     return SingleChildScrollView(
                       child: Column(
                         children: <Widget>[
                           SwiperWidget(items: swiperDataList),
                           ProductCategroysWidget(info: info,datas:products),
+                          AdBanner(url: url),
                           CategoryWidget(datas: recomands),
 
                         ],
@@ -177,7 +180,7 @@ class CategoryWidget extends StatelessWidget
       }
     return Container(
         margin: EdgeInsets.only(top: 10),
-        color: Colors.red,
+        //color: Colors.red,
         width: ScreenUtil.instance.setWidth(750),
         height: ScreenUtil.instance.setHeight(350),
         //padding: EdgeInsets.all(6.0),
@@ -206,7 +209,7 @@ class CategoryWidget extends StatelessWidget
   {
     return InkWell(
       child:Container(
-        color: Colors.lightBlue,
+        color: Colors.black12,
         child:Column(
           children: <Widget>[
             _getImages(map['image']),
@@ -241,4 +244,31 @@ class CategoryWidget extends StatelessWidget
 
   }
   
+  
+}
+
+class AdBanner extends StatelessWidget
+{
+  String url;
+  AdBanner({Key key,this.url}):super(key:key);
+  @override
+  Widget build(BuildContext context) {
+    
+    return Container(
+      child: Image.network(url),
+    );
+  }
+  
+}
+
+class PhoneWidget extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context) {
+
+    return InkWell(
+
+    );
+  }
+
 }
